@@ -6,37 +6,50 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:30:01 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/01/26 10:51:45 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/02/15 16:55:00 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	stack_print(int stack[], int len)
+t_stack	**get_stack(t_type stack)
 {
-	int i = 0;
-	while (i < len)
+	static t_stack	**stack_a;
+	static t_stack	**stack_b;
+
+	if (stack == A)
+		return (stack_a);
+	else if (stack == B)
+		return (stack_b);
+	return (stack_a);
+}
+
+void	fill_stack(int pos, int nbr)
+{
+	t_stack	**lst;
+	t_stack	*temp;
+
+	if (pos == 1)
 	{
-		ft_putnbr_fd(stack[i], 0);
-		i++;
+		temp = lst_new(nbr);
+		lst = get_stack(A);
+		lst = temp;
+	}
+	else
+	{
+		ft_lstadd_back(get_stack(A), lst_new(nbr));
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	int stackA[ac - 1];
-	int stackB[ac - 1];
-	int i = 1;
-	int k = 0;
+	int	i;
 
-	(void) stackB;
-
+	i = 1;
 	while (i < ac)
 	{
-		printf("Str => %d\n", ft_atoi(av[i]));
-		stackA[k] = ft_atoi(av[i]);
+		printf("Str => %s\n", av[i]);
+		fill_stack(i, ft_atoi(av[i]));
 		i++;
-		k++;
 	}
-	stack_print(stackA, k);
 }

@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   lst_new.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/15 16:47:57 by acinca-f         ###   ########.fr       */
+/*   Created: 2022/02/15 16:37:38 by acinca-f          #+#    #+#             */
+/*   Updated: 2022/02/15 16:46:29 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
-
-typedef enum e_type
+t_stack	*lst_new(int content)
 {
-	A,
-	B,
-	AB
-}	t_type;
+	t_stack	*new;
 
-typedef struct s_stack
-{
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
-
-t_stack	*lst_new(int content);
-
-#endif
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}

@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   lst_add_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/15 16:47:57 by acinca-f         ###   ########.fr       */
+/*   Created: 2022/02/15 16:49:25 by acinca-f          #+#    #+#             */
+/*   Updated: 2022/02/15 16:54:55 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
-
-typedef enum e_type
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	A,
-	B,
-	AB
-}	t_type;
+	t_stack	*help;
 
-typedef struct s_stack
-{
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
-
-t_stack	*lst_new(int content);
-
-#endif
+	if (*lst)
+	{
+		help = ft_lstlast(*lst);
+		help->next = new;
+	}
+	else if (lst && !(*(lst)))
+		*lst = new;
+}
