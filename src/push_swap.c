@@ -12,10 +12,10 @@
 
 #include "../push_swap.h"
 
-t_stack	**get_stack(t_type stack)
+t_stack *get_stack(t_type stack)
 {
-	static t_stack	**stack_a;
-	static t_stack	**stack_b;
+	static t_stack *stack_a;
+	static t_stack *stack_b;
 
 	if (stack == A)
 		return (stack_a);
@@ -24,32 +24,36 @@ t_stack	**get_stack(t_type stack)
 	return (stack_a);
 }
 
-void	fill_stack(int pos, int nbr)
+void print_stack(t_stack *list)
 {
-	t_stack	**lst;
-	t_stack	*temp;
+	t_stack *temp;
 
-	if (pos == 1)
-	{
-		temp = lst_new(nbr);
-		lst = get_stack(A);
-		lst = temp;
-	}
-	else
-	{
-		ft_lstadd_back(get_stack(A), lst_new(nbr));
-	}
+	temp = list;
+	if (temp)
+		while (temp->next)
+		{
+			ft_putnbr_fd(temp->content, 1);
+			temp = temp->next;
+		}
 }
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
-	int	i;
+	t_stack *stack_a;
+	int i;
+	int nbr;
 
 	i = 1;
+	stack_a = get_stack(A);
 	while (i < ac)
 	{
-		printf("Str => %s\n", av[i]);
-		fill_stack(i, ft_atoi(av[i]));
+		nbr = ft_atoi(av[i]);
+		if (i == 1)
+			initialize_list(stack_a, nbr);
+		/*else
+			add_node_to_end(stack_a, ft_atoi(av[i]));*/
+		printf("[%d / %d] Str => %d\n", i, ac, nbr);
 		i++;
 	}
+	print_stack(stack_a);
 }

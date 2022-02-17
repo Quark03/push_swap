@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	sa(void)
+#include "../push_swap.h"
+
+void sa(void)
 {
 	write(1, "sa", 2);
 }
 
-void	sb(void)
+void sb(void)
 {
 	write(1, "sb", 2);
 }

@@ -11,26 +11,28 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#define PUSH_SWAP_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
+#include "libft/libft.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include <limits.h>
 
 typedef enum e_type
 {
 	A,
 	B,
 	AB
-}	t_type;
+} t_type;
 
 typedef struct s_stack
 {
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
+	int content;
+	struct s_stack *next;
+} t_stack;
 
-t_stack	*lst_new(int content);
+void initialize_list(t_stack *list, int number);
+t_stack *create_node(int number);
+void add_node_to_end(t_stack *first, int number);
 
 #endif
