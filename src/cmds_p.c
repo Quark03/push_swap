@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   cmds_2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 15:44:41 by acinca-f         ###   ########.fr       */
+/*   Created: 2022/02/22 15:38:46 by acinca-f          #+#    #+#             */
+/*   Updated: 2022/02/22 15:40:14 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
-
-typedef enum e_type
+void	pa(void)
 {
-	A,
-	B,
-	AB
-}	t_type;
+	write(1, "pa", 2);
+}
 
-typedef struct s_stack
+void	pb(void)
 {
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
-
-t_stack	*lst_new(int content);
-void	lst_add_back(t_stack *head, int nbr);
-void	print_stack(t_stack *head);
-t_stack	**get_stack(t_type stack);
-
-#endif
+	write(1, "pa", 2);
+}

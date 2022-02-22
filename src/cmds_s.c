@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   cmds_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 15:44:41 by acinca-f         ###   ########.fr       */
+/*   Created: 2022/02/15 15:23:07 by acinca-f          #+#    #+#             */
+/*   Updated: 2022/02/22 15:38:33 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
-
-typedef enum e_type
+void	sa(void)
 {
-	A,
-	B,
-	AB
-}	t_type;
+	write(1, "sa", 2);
+}
 
-typedef struct s_stack
+void	sb(void)
 {
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
+	write(1, "sb", 2);
+}
 
-t_stack	*lst_new(int content);
-void	lst_add_back(t_stack *head, int nbr);
-void	print_stack(t_stack *head);
-t_stack	**get_stack(t_type stack);
-
-#endif
+void	ss(void)
+{
+	write(1, "ss", 2);
+}
