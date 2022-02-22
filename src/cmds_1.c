@@ -6,18 +6,18 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 15:23:07 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/15 15:27:54 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/02/22 15:31:54 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void sa(void)
+void	sa(void)
 {
 	write(1, "sa", 2);
 }
 
-void sb(void)
+void	sb(void)
 {
 	write(1, "sb", 2);
 }
