@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list-utils.c                                       :+:      :+:    :+:   */
+/*   list-utils-2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 15:30:20 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 16:42:43 by acinca-f         ###   ########.fr       */
+/*   Created: 2022/02/22 16:50:14 by acinca-f          #+#    #+#             */
+/*   Updated: 2022/02/22 17:14:11 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*lst_new(int content)
-{
-	t_stack	*new;
-
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
-}
-
-void	lst_add_back(t_stack *head, int nbr)
+// First element becomes the last one
+void	lst_shift_up(t_stack *head)
 {
 	t_stack	*temp;
 
@@ -33,29 +22,13 @@ void	lst_add_back(t_stack *head, int nbr)
 	{
 		temp = temp->next;
 	}
-	temp->next = lst_new(nbr);
+	temp->next = head;
+	head = head->next;
+	head->next = NULL;
 }
 
-void	lst_add_front(t_stack **head, int nbr)
+// The last element becomes the first one
+void	lst_shift_down(t_stack *head)
 {
-	t_stack	*new;
-
-	new = lst_new(nbr);
-	new->next = *head;
-	*head = new;
-}
-
-int	lst_length(t_stack *head)
-{
-	t_stack	*temp;
-	int		sum;
-
-	temp = head;
-	sum = 0;
-	while (temp != NULL)
-	{
-		temp = temp->next;
-		sum++;
-	}
-	return (sum);
+	(void)head;
 }

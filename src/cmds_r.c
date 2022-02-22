@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:40:51 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 15:41:20 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/02/22 17:13:07 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ra(void)
 {
-	write(1, "ra", 2);
+	lst_shift_up((*get_stack(A)));
+	ft_putstr_fd("ra\n", 1);
 }
 
 void	rb(void)

@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 16:37:23 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/02/22 17:12:43 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	lst_add_front(t_stack **head, int nbr);
 void	print_stack(t_stack *head);
 t_stack	**get_stack(t_type stack);
 int		lst_length(t_stack *head);
+void	lst_shift_up(t_stack *head);
+void	lst_shift_down(t_stack *head);
 
 // Commands
 void	sa(int print);
