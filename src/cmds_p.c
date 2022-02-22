@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmds_2.c                                           :+:      :+:    :+:   */
+/*   cmds_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:38:46 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 15:40:14 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/02/22 16:36:42 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,26 @@
 
 void	pa(void)
 {
-	write(1, "pa", 2);
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(void)
 {
-	write(1, "pa", 2);
+	t_stack	*stack_a;
+	t_stack	*temp;
+
+	if ((*get_stack(A)) == NULL)
+		return ;
+	stack_a = (*get_stack(A));
+	if ((*get_stack(B)) == NULL)
+	{
+		temp = lst_new(stack_a->content);
+		(*get_stack(B)) = temp;
+	}
+	else
+	{
+		lst_add_front(get_stack(B), stack_a->content);
+	}
+	(*get_stack(A)) = stack_a->next;
+	ft_putstr_fd("pb\n", 1);
 }

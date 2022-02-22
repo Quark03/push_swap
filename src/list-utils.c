@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:30:20 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 15:30:35 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/02/22 16:37:14 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,28 @@ void	lst_add_back(t_stack *head, int nbr)
 		temp = temp->next;
 	}
 	temp->next = lst_new(nbr);
+}
+
+void	lst_add_front(t_stack **head, int nbr)
+{
+	t_stack	*new;
+
+	new = lst_new(nbr);
+	new->next = *head;
+	*head = new;
+}
+
+int	lst_length(t_stack *head)
+{
+	t_stack	*temp;
+	int		sum;
+
+	temp = head;
+	sum = 0;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+		sum++;
+	}
+	return (sum);
 }
