@@ -6,12 +6,15 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:38:46 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 16:45:51 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/02 11:18:35 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+// a (push a): Take the first element at the
+// top of b and put it at the top of a.
+// Do nothing if b is empty.
 void	pa(void)
 {
 	t_stack	*stack_b;
@@ -31,6 +34,9 @@ void	pa(void)
 	ft_putstr_fd("pa\n", 1);
 }
 
+// (push b): Take the first element at the
+// top of a and put it at the top of b.
+// Do nothing if a is empty.
 void	pb(void)
 {
 	t_stack	*stack_a;

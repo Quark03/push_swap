@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:30:01 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/02 09:57:31 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/02 11:42:29 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ int	main(int ac, char **av)
 		}
 		i++;
 	}
-	ra(1);
-	rra(1);
-	print_stack(A);
-	print_stack(B);
+	lst_sort();
+	ft_putstr_fd("\n\n\nDONE !\n", 1);
 }

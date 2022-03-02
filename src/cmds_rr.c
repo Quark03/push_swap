@@ -6,12 +6,14 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:41:45 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/02 10:07:35 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/02 11:19:24 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+//  (reverse rotate a): Shift down all elements of stack a by 1.
+//  The last element becomes the first one.
 void	rra(int print)
 {
 	t_stack	*temp;
@@ -35,6 +37,8 @@ void	rra(int print)
 		ft_putstr_fd("rra\n", 1);
 }
 
+// (reverse rotate b): Shift down all elements of stack b by 1.
+// The last element becomes the first one.
 void	rrb(int print)
 {
 	t_stack	*temp;
@@ -58,6 +62,7 @@ void	rrb(int print)
 		ft_putstr_fd("rrb\n", 1);
 }
 
+// Both RRA & RRB
 void	rrr(void)
 {
 	rra(0);

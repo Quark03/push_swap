@@ -6,12 +6,14 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 15:23:07 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 16:10:52 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/02 11:17:02 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+//  (swap a): Swap the first 2 elements at the top of stack a.
+//  Do nothing if there is only one or no elements.
 void	sa(int print)
 {
 	t_stack	*node_1;
@@ -30,6 +32,8 @@ void	sa(int print)
 		ft_putstr_fd("sa\n", 1);
 }
 
+//  (swap b): Swap the first 2 elements at the top of stack b.
+//  Do nothing if there is only one or no elements
 void	sb(int print)
 {
 	t_stack	*node_1;
@@ -48,6 +52,7 @@ void	sb(int print)
 		ft_putstr_fd("sb\n", 1);
 }
 
+// Both SA & SS
 void	ss(void)
 {
 	sa(0);

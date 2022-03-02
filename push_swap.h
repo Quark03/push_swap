@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/02 09:55:41 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:45:32 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,15 @@ void	lst_add_front(t_stack **head, int nbr);
 void	print_stack(t_type stack);
 t_stack	**get_stack(t_type stack);
 int		lst_length(t_stack *head);
+
+// Algorithm Utils
+int		get_max(t_list *head);
+int		digits(int nbr);
+int		power(int nbr, int exp);
+void	count_sort(int exp);
+
+// Algorithm
+void	lst_sort(void);
 
 // Commands
 void	sa(int print);
