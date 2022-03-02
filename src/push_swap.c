@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:30:01 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 17:11:18 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/02 09:57:31 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,17 @@ t_stack	**get_stack(t_type stack)
 	return (&stack_a);
 }
 
-void	print_stack(t_stack *head)
+void	print_stack(t_type stack)
 {
+	t_stack	*head;
 	t_stack	*temp;
 
+	ft_putstr_fd("Stack", 1);
+	if (stack == A)
+		ft_putstr_fd(" A: ", 1);
+	else
+		ft_putstr_fd(" B: ", 1);
+	head = (*get_stack(stack));
 	temp = head;
 	if (!head)
 	{
@@ -63,7 +70,8 @@ int	main(int ac, char **av)
 		}
 		i++;
 	}
-	ra();
-	print_stack((*get_stack(A)));
-	print_stack((*get_stack(B)));
+	ra(1);
+	rra(1);
+	print_stack(A);
+	print_stack(B);
 }
