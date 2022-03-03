@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:30:20 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/02/22 16:42:43 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/03 12:22:51 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ void	lst_add_back(t_stack *head, int nbr)
 		temp = temp->next;
 	}
 	temp->next = lst_new(nbr);
+}
+
+void	lst_add_and_initialize(t_stack **list, int nbr)
+{
+	if (*list)
+		lst_add_back(*list, nbr);
+	else if (list && !(*(list)))
+		*list = lst_new(nbr);
 }
 
 void	lst_add_front(t_stack **head, int nbr)

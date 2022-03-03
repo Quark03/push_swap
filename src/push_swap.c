@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:30:01 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/02 11:42:29 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/03 12:52:49 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,16 @@ void	print_stack(t_type stack)
 	ft_putstr_fd("\n", 1);
 }
 
+void	print_list(t_stack *head)
+{
+	while (head)
+	{
+		ft_putnbr_fd(head->content, 1);
+		ft_putstr_fd(" ", 1);
+		head = head->next;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	int		i;
@@ -70,6 +80,7 @@ int	main(int ac, char **av)
 		}
 		i++;
 	}
+	print_stack(A);
 	lst_sort();
 	ft_putstr_fd("\n\n\nDONE !\n", 1);
 }
