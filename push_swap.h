@@ -6,12 +6,15 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/03 12:51:14 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/04 16:57:37 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# ifndef STACK_SAVE_SIZE
+#  define STACK_SAVE_SIZE 3
+# endif
 
 # include "libft/libft.h"
 # include <stdarg.h>
@@ -31,15 +34,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-typedef struct s_lis_vars
-{
-	int	current_len;
-	int	max_len;
-	int	total_count;
-	int	res_index;
-}	t_lis_vars;
-
-// Functions
+// List Methods
 t_stack	*lst_new(int content);
 void	lst_add_back(t_stack *head, int nbr);
 void	lst_add_front(t_stack **head, int nbr);
@@ -48,14 +43,9 @@ void	print_stack(t_type stack);
 void	print_list(t_stack *head);
 t_stack	**get_stack(t_type stack);
 int		lst_length(t_stack *head);
-
-// Algorithm Utils
-t_stack	*get_lis(void);
-void	do_lis_loop(t_lis_vars *vars);
-t_stack	*create_lis(t_stack *current, t_lis_vars vars);
-
-// Algorithm
-void	lst_sort(void);
+int		get_stack_by_index(t_stack *head, int index);
+void	lst_pop_back(t_stack *head);
+int		lst_get_last_val(t_stack *head);
 
 // Commands
 void	sa(int print);
@@ -69,5 +59,15 @@ void	rr(void);
 void	rra(int print);
 void	rrb(int print);
 void	rrr(void);
+
+// Algorithm
+void	stack_sort(void);
+void	lst_sort_large(void);
+void	lst_sort_3(void);
+void	exec_command(int c);
+int		is_sorted(t_stack *node1, t_stack *node2, t_stack *node3);
+void	sort_small_stack(t_stack *node1, t_stack *node2, t_stack *node3);
+t_stack	*find_lis(t_stack *head);
+void	empty_a(void);
 
 #endif

@@ -5,77 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 12:29:42 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/03 12:51:18 by acinca-f         ###   ########.fr       */
+/*   Created: 2022/03/04 12:40:46 by acinca-f          #+#    #+#             */
+/*   Updated: 2022/03/04 13:45:57 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// Get the Longest Increasing Sequence
-t_stack	*get_lis(void)
+/**
+ *	0 ->  SA
+ *	1 ->  SB
+ *	2 ->  SS
+ *	3 ->  RA
+ *	4 ->  RB
+ *	5 ->  RR
+ *	6 ->  RRA
+ *	7 ->  RRB
+ *	8 ->  RRR
+ *	9 ->  PA
+ *	10 -> PB
+ */
+void	exec_command(int c)
 {
-	t_lis_vars	vars;
-	t_stack		*to_return;
-
-	vars.current_len = 1;
-	vars.max_len = 1;
-	vars.total_count = 1;
-	vars.res_index = 0;
-	do_lis_loop(&vars);
-	to_return = create_lis((*get_stack(A)), vars);
-	return (to_return);
+	if (c == 0)
+		sa(1);
+	else if (c == 1)
+		sb(1);
+	else if (c == 2)
+		ss();
+	else if (c == 3)
+		ra(1);
+	else if (c == 4)
+		rb(1);
+	else if (c == 5)
+		rr();
+	else if (c == 6)
+		rra(1);
+	else if (c == 7)
+		rrb(1);
+	else if (c == 8)
+		rrr();
+	else if (c == 9)
+		pa();
+	else if (c == 10)
+		pb();
 }
 
-void	do_lis_loop(t_lis_vars *vars)
+/**
+ * Leaves A with just 3 elements
+ */
+void	empty_a(void)
 {
-	t_stack		*current;
+	int	len_a;
 
-	current = (*get_stack(A));
-	while (current->next)
+	len_a = lst_length((*get_stack(A)));
+	if (len_a > 3)
 	{
-		if (current->content < (current->next)->content)
-			vars->current_len++;
-		else
-		{
-			if (vars->max_len < vars->current_len)
-			{
-				vars->max_len = vars->current_len;
-				vars->res_index = vars->total_count - vars->current_len;
-			}
-			vars->current_len = 1;
-		}
-		vars->total_count++;
-		current = current->next;
+		return ;
 	}
-	if (vars->max_len < vars->current_len)
-	{
-		vars->max_len = vars->current_len;
-		vars->res_index = vars->total_count - vars->max_len;
-	}
-}
-
-t_stack	*create_lis(t_stack *current, t_lis_vars vars)
-{
-	t_stack	*to_return;
-	int		i;
-
-	i = 0;
-	to_return = NULL;
-	while (current)
-	{
-		if (i == vars.res_index)
-		{
-			while (vars.max_len > 0)
-			{
-				lst_add_and_initialize(&to_return, current->content);
-				current = current->next;
-				vars.max_len--;
-			}
-			break ;
-		}
-		i++;
-		current = current->next;
-	}
-	return (to_return);
+	return ;
 }
