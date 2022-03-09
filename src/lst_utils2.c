@@ -6,13 +6,13 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:05:01 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/04 16:58:38 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:10:53 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	get_stack_by_index(t_stack *head, int index)
+int	get_value_by_index(t_stack *head, int index)
 {
 	int	i;
 	int	list_length;
@@ -27,6 +27,21 @@ int	get_stack_by_index(t_stack *head, int index)
 		i++;
 	}
 	return (head->content);
+}
+
+int	get_index_by_value(t_stack *head, int value)
+{
+	int	i;
+
+	i = -1;
+	while (head->next)
+	{
+		if (head->content == value)
+			return (i);
+		i++;
+		head = head->next;
+	}
+	return (i);
 }
 
 void	lst_pop_back(t_stack *head)

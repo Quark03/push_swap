@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:40:46 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/04 13:45:57 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:28:56 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,20 @@ void	empty_a(void)
 	int	len_a;
 
 	len_a = lst_length((*get_stack(A)));
-	if (len_a > 3)
+	while (len_a-- > 3)
+		exec_command(10);
+}
+
+/**
+ * Check if the list is sorted
+*/
+int	is_sorted(t_stack *head)
+{
+	while (head && head->next)
 	{
-		return ;
+		if (head->content > head->next->content)
+			return (0);
+		head = head->next;
 	}
-	return ;
+	return (1);
 }

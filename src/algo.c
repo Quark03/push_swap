@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 10:27:03 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/04 16:59:32 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:36:17 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,54 @@
 
 void	stack_sort(void)
 {
-	t_stack	*stack_a;
-	t_stack	*lis;
-
-	stack_a = (*get_stack(A));
-	if (lst_length(stack_a) <= STACK_SAVE_SIZE)
-		lst_sort_3();
+	if (is_sorted((*get_stack(A))))
+		return ;
+	else if (lst_length((*get_stack(A))) <= 3)
+		lst_sort_small();
 	else
-	{
-		lis = find_lis((*get_stack(A)));
-		if (lst_length(lis) <= 3)
-			empty_a();
-		else
-			ft_putstr_fd("Using LIS", 1);
 		lst_sort_large();
-	}
 }
 
-void	lst_sort_3(void)
+void	lst_sort_small(void)
 {
-	t_stack	*node1;
-	t_stack	*node2;
-	t_stack	*node3;
-
-	node1 = (*get_stack(A));
-	node2 = node1->next;
-	node3 = node2->next;
-	if (!node2 && !node3)
-		return ;
-	if (!node3)
+	if (lst_length((*get_stack(A))) < 3)
 	{
-		if (node1->content > node2->content)
-			exec_command(3);
+		if ((*get_stack(A))->content > (*get_stack(A))->next->content)
+			exec_command(0);
 		return ;
 	}
-	if (is_sorted(node1, node2, node3) == 1)
-		return ;
-	else
-		sort_small_stack(node1, node2, node3);
+	if ((*get_stack(A))->content > (*get_stack(A))->next->content)
+	{
+		exec_command(0);
+	}
+	if ((*get_stack(A))->next->content > (*get_stack(A))->next->next->content)
+	{
+		exec_command(3);
+		exec_command(0);
+		exec_command(6);
+		if ((*get_stack(A))->content > (*get_stack(A))->next->content)
+		{
+			exec_command(0);
+		}
+	}
 }
 
 void	lst_sort_large(void)
 {
-	return ;
+	t_stack	*stack_b;
+	t_stack	*steps;
+	int		moves;
+
+	empty_a();
+	lst_sort_small();
+	steps = NULL;
+	stack_b = (*get_stack(B));
+	moves = -1;
+	while (stack_b)
+	{
+		moves = moves_to_sort(stack_b->content);
+		printf("Number: %d | Moves: %d\n", stack_b->content, moves);
+		lst_add_and_initialize(&steps, moves);
+		stack_b = stack_b->next;
+	}
 }
