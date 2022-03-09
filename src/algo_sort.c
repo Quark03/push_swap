@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:43:26 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/09 15:44:16 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:58:15 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	sort_value(int value)
 {
-
+	(void) value;
+	return ;
 }
