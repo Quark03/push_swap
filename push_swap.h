@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: quark <quark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/09 15:06:28 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:56:58 by quark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,11 @@ void	lst_sort_large(void);
 void	exec_command(int c);
 int		is_sorted(t_stack *head);
 void	empty_a(void);
+void	sort_values(void);
+void	run_smaller_sequence(t_stack **moves, int len);
 
-//A
-int		moves_to_sort(int number);
+//Algo Moves
+void	moves_to_sort(t_stack **moves, int value);
 int		moves_to_top_b(int number);
 int		find_spot_in_a(t_stack *head, int number);
 

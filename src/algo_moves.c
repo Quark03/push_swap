@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_large.c                                       :+:      :+:    :+:   */
+/*   algo_moves.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: quark <quark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:49:22 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/09 15:26:35 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/14 12:33:58 by quark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	moves_to_sort(int number)
+void	moves_to_sort(t_stack **moves, int value)
 {
-	int	moves;
+	int	moves_c;
 
-	moves = 1;
-	moves += moves_to_top_b(number);
-	moves += find_spot_in_a((*get_stack(A)), number);
-	return (moves);
+	moves_c = moves_to_top_b(value);
+	while (moves_c-- > 0)
+		lst_add_and_initialize(moves, 4);
+	moves_c = find_spot_in_a((*get_stack(A)), value);
+	while (moves_c-- > 0)
+		lst_add_and_initialize(moves, 3);
+	lst_add_and_initialize(moves, 9);
 }
 
 int	moves_to_top_b(int number)
