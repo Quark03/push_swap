@@ -6,7 +6,7 @@
 /*   By: quark <quark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/14 13:56:58 by quark            ###   ########.fr       */
+/*   Updated: 2022/03/15 10:03:53 by quark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void	exec_command(int c);
 int		is_sorted(t_stack *head);
 void	empty_a(void);
 void	sort_values(void);
-void	run_smaller_sequence(t_stack **moves, int len);
+int		find_smaller_sequence(t_stack **moves, int len);
+void	run_smaller_sequence(t_stack *head);
 
 //Algo Moves
 void	moves_to_sort(t_stack **moves, int value);
