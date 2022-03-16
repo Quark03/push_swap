@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:43:26 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/16 13:52:39 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:57:29 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ void	sort_values(void)
 	smaller = find_smaller_sequence(moves, len_b);
 	run_smaller_sequence(moves[smaller]);
 	place_min_top(*(get_stack(A)));
-	printf("--------\n");
-	print_stack(A);
-	print_stack(B);
 }
 
 int	find_smaller_sequence(t_stack **moves, int len)

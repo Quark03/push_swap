@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:30:01 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/16 11:58:32 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:11:05 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,3 @@ int	main(int ac, char **av)
 	ft_putstr_fd("✅ ", 1);
 	print_stack(B);
 }
-/*
-
-	1. Passar todos os elementos para a stack B excepto 3
-	2. Ver os movimentos que cusa passar cada elemento de B
-	para A.
-*/
