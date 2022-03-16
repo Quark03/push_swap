@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quark <quark@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/15 10:03:53 by quark            ###   ########.fr       */
+/*   Updated: 2022/03/16 12:31:24 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	empty_a(void);
 void	sort_values(void);
 int		find_smaller_sequence(t_stack **moves, int len);
 void	run_smaller_sequence(t_stack *head);
+void	place_min_top(t_stack *head);
 
 //Algo Moves
 void	moves_to_sort(t_stack **moves, int value);

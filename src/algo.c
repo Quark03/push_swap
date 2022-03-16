@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quark <quark@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 10:27:03 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/14 13:59:46 by quark            ###   ########.fr       */
+/*   Updated: 2022/03/16 12:35:26 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	lst_sort_large(void)
 	lst_sort_small();
 	while (lst_length((*get_stack(B))) > 0)
 	{
-		printf("Length B: %d\n", lst_length((*get_stack(B))));
 		sort_values();
 	}
 }
