@@ -1,4 +1,14 @@
 SRCS = src/push_swap.c  \
+	src/algo_moves.c  \
+	src/algo_sort.c  \
+	src/algo_utils.c  \
+	src/algo.c  \
+	src/cmds_p.c  \
+	src/cmds_r.c  \
+	src/cmds_rr.c  \
+	src/cmds_s.c  \
+	src/list_utils.c  \
+	src/list_utils2.c  \
 	libft/ft_atoi.c \
 	libft/ft_bzero.c \
 	libft/ft_calloc.c \
@@ -35,7 +45,7 @@ SRCS = src/push_swap.c  \
 	libft/ft_toupper.c \
 
 OBJS = ${SRCS:.c=.o}
-NAME = libftprintf.a
+NAME = push_swap.a
 HEAD = includes
 CC = gcc
 RM = rm -f
