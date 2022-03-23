@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_moves.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: quark <quark@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:49:22 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/03/16 17:37:28 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/03/18 11:41:50 by quark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ void	moves_to_sort(t_stack **moves, int value)
 int	moves_to_top_b(int number)
 {
 	int	pos;
-	int	size;
 
-	size = lst_length((*get_stack(B)));
 	pos = get_index_by_value((*get_stack(B)), number);
 	return (pos);
 }
