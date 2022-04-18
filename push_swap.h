@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:34:53 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/04/06 12:01:34 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/04/18 12:45:49 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void		place_min_top(t_stack *head);
 //Algo Moves
 void		moves_to_sort(t_stack **moves, int value);
 int			moves_to_top_b(int number);
-int			find_spot_in_a(t_stack *head, int number);
+int			find_spot_in_a(int number);
 
 //Algo Optimize
 t_counts	count_moves(t_stack *list);

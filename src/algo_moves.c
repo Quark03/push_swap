@@ -6,7 +6,7 @@
 /*   By: acinca-f <acinca-f@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:49:22 by acinca-f          #+#    #+#             */
-/*   Updated: 2022/04/06 11:42:01 by acinca-f         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:00:17 by acinca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,42 @@
 
 void	moves_to_sort(t_stack **moves, int value)
 {
-	int	moves_c;
+	int	moves_count;
+	int	pos;
 	int	len;
-	int	temp;
 
 	len = lst_length((*get_stack(B)));
-	moves_c = moves_to_top_b(value);
-	if ((moves_c + 1) - (len / 2) > 0)
+	pos = moves_to_top_b(value);
+	if (pos - (len - 1) < 0)
 	{
-		temp = len - (moves_c + 1);
-		while (temp-- > 0)
+		moves_count = pos - (len - 1);
+		while (moves_count++ < 0)
 			lst_add_and_initialize(moves, 7);
 	}
-	else
+	else if (pos - (len - 1) >= 0)
 	{
-		temp = moves_c - 1;
-		while (temp++ < 0)
+		moves_count = pos - (len - 1);
+		while (moves_count-- > 0)
 			lst_add_and_initialize(moves, 4);
 	}
-	moves_c = find_spot_in_a((*get_stack(A)), value);
-	while (moves_c-- > 0)
-		lst_add_and_initialize(moves, 3);
+	pos = find_spot_in_a(value);
+	len = lst_length((*get_stack(A)));
+	if (pos - (len - 1) < 0)
+	{
+		moves_count = pos - (len - 1);
+		while (moves_count++ < 0)
+			lst_add_and_initialize(moves, 6);
+	}
+	else if (pos - (len - 1) >= 0)
+	{
+		moves_count = pos - (len - 1);
+		while (moves_count-- > 0)
+			lst_add_and_initialize(moves, 3);
+	}
 	lst_add_and_initialize(moves, 9);
 }
 
+// Moves needed to place the number on top of stack B
 int	moves_to_top_b(int number)
 {
 	int	pos;
@@ -46,18 +58,19 @@ int	moves_to_top_b(int number)
 	return (pos);
 }
 
-int	find_spot_in_a(t_stack *head, int number)
+// Find where to place the number in stack A
+int	find_spot_in_a(int number)
 {
-	t_stack	*temp;
+	t_stack	*head;
 	int		moves;
 
 	moves = 0;
-	temp = head;
-	while (temp)
+	head = *(get_stack(A));
+	while (head)
 	{
-		if (temp->content < number)
+		if (head->content < number)
 			moves++;
-		temp = temp->next;
+		head = head->next;
 	}
 	return (moves);
 }
